@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { poppins } from "../layout";
+import { Poppins } from "next/font/google";
 
 interface Props {
   image: any;
@@ -10,6 +10,11 @@ interface Props {
   venue: string;
   cta: string;
 }
+
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+});
 
 export default function TicketCard(props: Props) {
   const { image, title, date, day, time, venue, cta } = props;
