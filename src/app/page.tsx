@@ -2,21 +2,26 @@
 
 import { useState } from "react";
 import Ad from "./components/Ad";
-import { poppins } from "./layout";
 import { FiSun } from "react-icons/fi";
 import { FaRegMoon } from "react-icons/fa";
+import { Poppins } from "next/font/google";
 import TeamCard from "./components/TeamCard";
 import { teams, tickets } from "./utils/data";
 import TicketCard from "./components/TicketCard";
 import CarouselBtn from "./components/CarouselBtn";
 import { IoIosArrowForward, IoIosArrowBack } from "react-icons/io";
 
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+});
+
 export default function Home() {
   const [dark, setDark] = useState(false);
 
   return (
     <main className={`${dark && "dark"}`}>
-      <div className="mx-auto p-3 md:p-12 dark:bg-[#292B32]">
+      <div className="mx-auto p-3 dark:bg-[#292B32] md:p-12">
         <header className="flex items-center justify-between">
           <h1
             className={`${poppins.className} w-min border-b-2 border-[#738FFF] text-[24px] font-bold dark:text-white`}
@@ -44,7 +49,7 @@ export default function Home() {
         <section className="from-[#18282A] to-[#221A2C] p-3 pb-12 dark:bg-gradient-to-b">
           <div className="mx-auto flex flex-col items-center lg:w-10/12">
             <h1
-              className={`${poppins.className} mt-20 text-center text-[25px] font-bold md:text-[37.5px] lg:text-[50px] dark:text-white`}
+              className={`${poppins.className} mt-20 text-center text-[25px] font-bold dark:text-white md:text-[37.5px] lg:text-[50px]`}
             >
               Collection Spotlight
             </h1>
